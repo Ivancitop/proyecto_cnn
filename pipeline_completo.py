@@ -78,8 +78,8 @@ MODO_SPLIT = "aleatorio"
 ROI_MODO = "auto"
 ROI_MANUAL = None
 MARGEN_ROI = 0.08          # margen extra alrededor de la pieza (fracción)
-IMG_BASE = 128             # tamaño (lado) con el que se guardan las imágenes procesadas
-USAR_GRIS = False          # True -> escala de grises (1 canal); False -> color (3 canales)
+IMG_BASE = 256             # tamaño (lado) con el que se guardan las imágenes procesadas
+USAR_GRIS = True         # True -> escala de grises (1 canal); False -> color (3 canales)
 
 # Criterios para descartar imágenes inválidas
 MIN_LADO = 200             # px mínimos de ancho/alto
@@ -95,14 +95,14 @@ AUG = dict(rotacion=10, traslacion=0.05, zoom=(0.9, 1.1),
 # CNN
 # ----------------------------------------------------------------------------
 CNN_BASE = dict(
-    img_size=128,      # tamaño de entrada (<= IMG_BASE recomendado)
-    n_filtros=16,      # filtros de la 1.ª capa (se duplican en cada capa)
-    n_capas=3,         # bloques convolucionales
-    lr=1e-3,
+    img_size=IMG_BASE,      # tamaño de entrada (<= IMG_BASE recomendado)
+    n_filtros=32,      # filtros de la 1.ª capa (se duplican en cada capa)
+    n_capas=7,         # bloques convolucionales
+    lr=5e-3,
     batch_size=16,
-    epocas=40,
+    epocas=70,
     dropout=0.3,
-    paciencia=12,      # early stopping sobre val_loss (None = desactivado)
+    paciencia=None,      # early stopping sobre val_loss (None = desactivado)
     weight_decay=1e-4,
 )
 
