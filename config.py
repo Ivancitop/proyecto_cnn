@@ -57,7 +57,7 @@ ROI_MODO = "auto"
 ROI_MANUAL = None
 MARGEN_ROI = 0.08          # margen extra alrededor de la pieza (fracción)
 IMG_BASE = 128             # tamaño (lado) con el que se guardan las imágenes procesadas
-USAR_GRIS = False          # True -> escala de grises (1 canal); False -> color (3 canales)
+USAR_GRIS = True         # True -> escala de grises (1 canal); False -> color (3 canales)
 
 # Criterios para descartar imágenes inválidas
 MIN_LADO = 200             # px mínimos de ancho/alto
