@@ -74,11 +74,11 @@ AUG = dict(rotacion=10, traslacion=0.05, zoom=(0.9, 1.1),
 # ----------------------------------------------------------------------------
 CNN_BASE = dict(
     img_size=IMG_BASE,      # tamaño de entrada (<= IMG_BASE recomendado)
-    n_filtros=32,      # filtros de la 1.ª capa (se duplican en cada capa)
-    n_capas=7,         # bloques convolucionales
+    n_filtros=16,      # filtros de la 1.ª capa (se duplican en cada capa)
+    n_capas=6,         # bloques convolucionales
     lr=5e-3,
     batch_size=16,
-    epocas=70,
+    epocas=25,
     dropout=0.3,
     paciencia=None,      # early stopping sobre val_loss (None = desactivado)
     weight_decay=1e-4,
