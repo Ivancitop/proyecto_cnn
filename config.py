@@ -62,12 +62,12 @@ USAR_GRIS = True         # True -> escala de grises (1 canal); False -> color (3
 # Criterios para descartar imágenes inválidas
 MIN_LADO = 200             # px mínimos de ancho/alto
 MIN_DESV = 5.0             # desviación estándar mínima (descarta imágenes casi uniformes)
-MIN_MEDIA, MAX_MEDIA = 8, 247   # brillo medio mínimo/máximo (sub/sobreexposición)
+MIN_MEDIA, MAX_MEDIA = 3, 247   # brillo medio mínimo/máximo (sub/sobreexposición)
 UMBRAL_NITIDEZ = 3.0       # varianza del Laplaciano mínima (descarta imágenes muy desenfocadas)
 
 # Data augmentation (solo en entrenamiento)
-AUG = dict(rotacion=10, traslacion=0.05, zoom=(0.9, 1.1),
-           brillo=0.25, contraste=0.25, ruido_std=0.02)
+AUG = dict(rotacion=30, traslacion=0.1, zoom=(0.7, 1.3),
+           brillo=0.40, contraste=0.40, ruido_std=0.08)
 
 # ----------------------------------------------------------------------------
 # CNN
@@ -78,7 +78,7 @@ CNN_BASE = dict(
     n_capas=6,         # bloques convolucionales
     lr=5e-3,
     batch_size=16,
-    epocas=25,
+    epocas=17,
     dropout=0.3,
     paciencia=None,      # early stopping sobre val_loss (None = desactivado)
     weight_decay=1e-4,
