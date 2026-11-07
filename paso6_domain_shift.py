@@ -8,6 +8,8 @@ Estructura esperada:
 
 Las etiquetas se obtienen del prefijo de cada archivo mediante utils_comunes.py.
 Se reutilizan ROI, tamaño, escala de grises y normalización del entrenamiento.
+Para diagnosticar fallos del ROI automático, --roi-manual permite dibujar un ROI
+individual por imagen y guardar sus coordenadas en un JSON reutilizable.
 """
 from __future__ import annotations
 
@@ -26,12 +28,12 @@ import numpy as np
 import torch
 from sklearn.metrics import confusion_matrix, precision_recall_fscore_support
 
-from config import CLASES, DIR_PROC, DIR_RES, IMG_BASE
+from config import CLASES, DIR_PROC, DIR_RES, IMG_BASE, MARGEN_ROI
 from utils_comunes import (
     calcular_roi,
     detectar_clase,
-    guardar_imagen,
     etiquetas_mostrar,
+    hacer_cuadrado,
     leer_imagen,
     listar_imagenes_por_clase,
     preprocesar_imagen,
@@ -159,6 +161,99 @@ def guardar_matriz(cm: np.ndarray, titulo: str, destino: Path):
     fig.savefig(destino, dpi=150)
     plt.close(fig)
 
+
+def seleccionar_roi_manual(img_bgr: np.ndarray, etiqueta: str) -> tuple[int, int, int, int]:
+    """Permite dibujar un ROI con el mouse y devuelve un ROI cuadrado en pixeles originales."""
+    alto, ancho = img_bgr.shape[:2]
+    max_ancho, max_alto = 1200, 800
+    escala = min(1.0, max_ancho / ancho, max_alto / alto)
+    if escala < 1.0:
+        vista = cv2.resize(
+            img_bgr,
+            (int(round(ancho * escala)), int(round(alto * escala))),
+            interpolation=cv2.INTER_AREA,
+        )
+    else:
+        vista = img_bgr
+
+    nombre_ventana = f"ROI manual - {etiqueta}"
+    print(f"\nSelecciona toda la pieza en: {etiqueta}")
+    print("Arrastra con el mouse y confirma con ENTER o ESPACIO. C cancela la selección.")
+    x, y, w, h = cv2.selectROI(
+        nombre_ventana, vista, showCrosshair=True, fromCenter=False
+    )
+    cv2.destroyWindow(nombre_ventana)
+
+    if w <= 0 or h <= 0:
+        raise RuntimeError("Selección manual cancelada o vacía.")
+
+    # cv2.selectROI trabaja sobre la vista escalada; regresamos a coordenadas originales.
+    if escala < 1.0:
+        x = int(round(x / escala))
+        y = int(round(y / escala))
+        w = int(round(w / escala))
+        h = int(round(h / escala))
+
+    x = max(0, min(int(x), ancho - 1))
+    y = max(0, min(int(y), alto - 1))
+    w = max(1, min(int(w), ancho - x))
+    h = max(1, min(int(h), alto - y))
+
+    # Convierte el rectángulo a cuadrado y agrega el mismo margen definido en config.py.
+    return tuple(int(v) for v in hacer_cuadrado((x, y, w, h), ancho, alto, MARGEN_ROI))
+
+
+def cargar_rois_manuales(ruta: Path) -> dict[str, dict[str, Any]]:
+    if not ruta.exists():
+        return {}
+    with open(ruta, "r", encoding="utf-8") as f:
+        datos = json.load(f)
+    if not isinstance(datos, dict):
+        raise ValueError(f"El archivo de ROIs manuales no contiene un diccionario: {ruta}")
+    return datos
+
+
+def guardar_rois_manuales(rois: dict[str, dict[str, Any]], ruta: Path) -> None:
+    ruta.parent.mkdir(parents=True, exist_ok=True)
+    temporal = ruta.with_suffix(ruta.suffix + ".tmp")
+    with open(temporal, "w", encoding="utf-8") as f:
+        json.dump(rois, f, indent=2, ensure_ascii=False)
+    temporal.replace(ruta)
+
+
+def obtener_roi_para_imagen(
+    img_bgr: np.ndarray,
+    ruta_imagen: Path,
+    carpeta_pruebas: Path,
+    condicion: str,
+    condiciones_manuales: set[str],
+    rois_guardados: dict[str, dict[str, Any]],
+    ruta_rois: Path,
+    forzar_seleccion: bool = False,
+) -> tuple[int, int, int, int] | None:
+    """ROI individual. Devuelve None para conservar la detección automática."""
+    if condicion not in condiciones_manuales:
+        return None
+
+    clave = ruta_imagen.relative_to(carpeta_pruebas).as_posix()
+    alto, ancho = img_bgr.shape[:2]
+    registro = rois_guardados.get(clave)
+
+    if registro and not forzar_seleccion:
+        forma_guardada = registro.get("shape")
+        roi_guardado = registro.get("roi")
+        if forma_guardada == [alto, ancho] and isinstance(roi_guardado, list) and len(roi_guardado) == 4:
+            x, y, w, h = [int(v) for v in roi_guardado]
+            if w > 0 and h > 0 and x >= 0 and y >= 0 and x + w <= ancho and y + h <= alto:
+                return (x, y, w, h)
+        print(f"[ROI] Se volverá a seleccionar {clave}: cambió el tamaño o el registro no es válido.")
+
+    roi = seleccionar_roi_manual(img_bgr, ruta_imagen.name)
+    rois_guardados[clave] = {"roi": list(roi), "shape": [alto, ancho]}
+    guardar_rois_manuales(rois_guardados, ruta_rois)
+    return roi
+
+
 def inferir_una(
     img_bgr: np.ndarray,
     modelo: torch.nn.Module,
@@ -166,11 +261,11 @@ def inferir_una(
     media: torch.Tensor,
     desv: torch.Tensor,
     device: torch.device,
+    roi_override: tuple[int, int, int, int] | None = None,
 ) -> tuple[int, np.ndarray, float, float]:
     t0 = time.perf_counter()
-    roi = calcular_roi(img_bgr)
+    roi = roi_override if roi_override is not None else calcular_roi(img_bgr)
     procesada = preprocesar_imagen(img_bgr, roi=roi, tam=int(cfg["img_size"]))
-    guardar_imagen(DIR_PROC / (str(t0) + ".png"), procesada)
     x = imagen_a_tensor(procesada, int(cfg["img_size"]))
     x = ((x - media) / desv).unsqueeze(0).to(device)
     t_pre = (time.perf_counter() - t0) * 1000.0
@@ -194,6 +289,20 @@ def main():
     parser.add_argument("--modelo", type=Path, default=DIR_RES / "cnn" / "modelo_mejor.pt")
     parser.add_argument("--salida", type=Path, default=DIR_RES / "paso6_domain_shift")
     parser.add_argument("--device", choices=("auto", "cpu", "cuda"), default="auto")
+    parser.add_argument(
+        "--roi-manual",
+        choices=("condicionA", "condicionB", "condicionC", "todas"),
+        default=None,
+        help="Selecciona manualmente un ROI distinto por imagen para la condición indicada.",
+    )
+    parser.add_argument(
+        "--roi-json", type=Path, default=None,
+        help="JSON donde se guardan/reutilizan las coordenadas de los ROIs manuales.",
+    )
+    parser.add_argument(
+        "--forzar-roi", action="store_true",
+        help="Vuelve a pedir el ROI aunque ya exista una selección guardada.",
+    )
     args = parser.parse_args()
 
     if args.device == "cuda" and not torch.cuda.is_available():
@@ -205,7 +314,26 @@ def main():
     media, desv = cargar_normalizacion()
     args.salida.mkdir(parents=True, exist_ok=True)
 
-    resumen: dict[str, Any] = {"modelo": str(args.modelo), "device": str(device), "condiciones": {}}
+    if args.roi_manual == "todas":
+        condiciones_manuales = set(CONDICIONES)
+    elif args.roi_manual:
+        condiciones_manuales = {args.roi_manual}
+    else:
+        condiciones_manuales = set()
+
+    ruta_rois = args.roi_json or (args.salida / "rois_manuales.json")
+    rois_guardados = cargar_rois_manuales(ruta_rois) if condiciones_manuales else {}
+
+    resumen: dict[str, Any] = {
+        "modelo": str(args.modelo), "device": str(device), "condiciones": {},
+        "roi_manual_condiciones": sorted(condiciones_manuales),
+        "roi_manual_json": str(ruta_rois) if condiciones_manuales else None,
+        "nota_roi": (
+            "Las condiciones indicadas usan ROI manual individual por imagen; "
+            "las demás usan ROI automático. Esta ejecución sirve para diagnóstico, "
+            "no para reportar el rendimiento autónomo del detector de ROI."
+        ) if condiciones_manuales else "Todas las condiciones usan ROI automático.",
+    }
     filas_resumen: list[dict[str, Any]] = []
     filas_imagenes: list[dict[str, Any]] = []
     ignoradas: list[dict[str, str]] = []
@@ -230,7 +358,13 @@ def main():
                 img = leer_imagen(ruta)
                 if img is None:
                     raise ValueError("imagen ilegible")
-                pred, probs, t_pre, t_inf = inferir_una(img, modelo, cfg, media, desv, device)
+                roi_override = obtener_roi_para_imagen(
+                    img, ruta, args.pruebas, condicion, condiciones_manuales,
+                    rois_guardados, ruta_rois, args.forzar_roi,
+                )
+                pred, probs, t_pre, t_inf = inferir_una(
+                    img, modelo, cfg, media, desv, device, roi_override=roi_override
+                )
                 y_true.append(real)
                 y_pred.append(pred)
                 tiempos_pre.append(t_pre)
@@ -240,6 +374,7 @@ def main():
                     "clase_predicha": CLASES[pred], "correcta": bool(real == pred),
                     "confianza": float(np.max(probs)),
                     "tiempo_preprocesamiento_ms": t_pre, "tiempo_inferencia_ms": t_inf,
+                    "roi_modo": "manual" if condicion in condiciones_manuales else "automatico",
                 }
                 for i, clase in enumerate(CLASES):
                     fila[f"prob_{clase}"] = float(probs[i])
