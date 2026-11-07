@@ -1,0 +1,93 @@
+{
+  "piezas_inspeccionadas": 10,
+  "piezas_predichas_aceptar": 7,
+  "piezas_predichas_rechazar": 3,
+  "piezas_con_etiqueta_real": 10,
+  "piezas_sin_etiqueta_real": 0,
+  "metricas_clasificacion": {
+    "accuracy": 0.9,
+    "precision_macro": 0.9523809523809524,
+    "recall_macro": 0.8888888888888888,
+    "f1_macro": 0.9076923076923077,
+    "fpr_macro_ovr": 0.08333333333333333,
+    "fnr_macro_ovr": 0.1111111111111111,
+    "por_clase": {
+      "normal": {
+        "precision": 0.8571428571428571,
+        "recall": 1.0,
+        "f1": 0.923076923076923,
+        "soporte": 6,
+        "fpr_ovr": 0.25,
+        "fnr_ovr": 0.0
+      },
+      "rayadura": {
+        "precision": 1.0,
+        "recall": 0.6666666666666666,
+        "f1": 0.8,
+        "soporte": 3,
+        "fpr_ovr": 0.0,
+        "fnr_ovr": 0.3333333333333333
+      },
+      "defectuosa": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "soporte": 1,
+        "fpr_ovr": 0.0,
+        "fnr_ovr": 0.0
+      }
+    },
+    "matriz_confusion": [
+      [
+        6,
+        0,
+        0
+      ],
+      [
+        1,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ]
+  },
+  "metricas_binarias_inspeccion": {
+    "correctamente_aceptadas": 6,
+    "correctamente_rechazadas": 3,
+    "falsos_positivos_pieza_buena_rechazada": 0,
+    "falsos_negativos_pieza_defectuosa_aceptada": 1,
+    "false_positive_rate": 0.0,
+    "false_negative_rate": 0.25,
+    "precision_rechazo": 1.0,
+    "recall_defectos": 0.75,
+    "f1_defectos": 0.8571428571428571
+  },
+  "modo": "camara",
+  "camara": "0",
+  "modelo": "C:\\Users\\Ivani\\PythonCodeLabs\\proyecto_cnn\\resultados\\paso7\\modelo_podado.pt",
+  "dispositivo": "cpu",
+  "duracion_sesion_s": 97.78972240000076,
+  "frames_capturados": 2901,
+  "fps_camara_procesamiento": 29.665694193646445,
+  "tiempo_captura_ms_media": 22.532032919638,
+  "tiempo_preprocesamiento_ms_media": 2.733159999115742,
+  "tiempo_inferencia_ms_media": 4.537669999626814,
+  "latencia_total_ms_media": 25.53105999904801,
+  "tiempo_ciclo_ms_media": 67.05360999985714,
+  "tiempo_ciclo_ms_maximo": 75.28850000016973,
+  "tasa_inspeccion_piezas_s": 0.10226023506944655,
+  "tasa_inspeccion_piezas_min": 6.135614104166793,
+  "cpu_proceso_pct_media": 68.01157894736842,
+  "ram_proceso_bytes_media": 446022041.6,
+  "ram_proceso_bytes_maxima": 446263296,
+  "tamano_archivo_modelo_bytes": 6321593,
+  "consumo_energetico": "No medido: requiere un medidor de potencia para el equipo de cómputo.",
+  "etiquetado_real": "Manual con teclas n/r/d; métricas calculadas solo sobre piezas etiquetadas.",
+  "tiempo_disponible_en_zona_ms": null,
+  "cumple_tiempo_linea_media": null,
+  "nota_tiempo_linea": "Proporciona --velocidad-banda-mm-s y --longitud-zona-mm para comparar contra la línea."
+}

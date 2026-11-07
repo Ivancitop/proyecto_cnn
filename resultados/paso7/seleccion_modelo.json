@@ -1,0 +1,67 @@
+{
+  "checkpoint_origen": "C:\\Users\\Ivani\\PythonCodeLabs\\proyecto_cnn\\resultados\\cnn\\modelo_mejor.pt",
+  "device_fp32": "cpu",
+  "cfg_entrenamiento": {
+    "img_size": 128,
+    "n_filtros": 16,
+    "n_capas": 6,
+    "lr": 0.005,
+    "batch_size": 16,
+    "epocas": 17,
+    "dropout": 0.3,
+    "paciencia": null,
+    "weight_decay": 0.0001
+  },
+  "clases": [
+    "normal",
+    "rayadura",
+    "defectuosa"
+  ],
+  "criterio_seleccion": {
+    "split": "val",
+    "caida_accuracy_maxima": 0.01,
+    "caida_f1_macro_maxima": 0.01,
+    "criterio_final": "menor latencia batch=1 entre modelos que cumplen la tolerancia de calidad"
+  },
+  "baseline_fp32": {
+    "accuracy": 1.0,
+    "precision_macro": 1.0,
+    "recall_macro": 1.0,
+    "f1_macro": 1.0,
+    "fpr_macro_ovr": 0.0,
+    "fnr_macro_ovr": 0.0,
+    "n_validacion": 114,
+    "latencia_media_ms": 2.7760479999960808,
+    "latencia_p50_ms": 2.649850000125298,
+    "latencia_p95_ms": 3.56162499911079,
+    "fps_batch1": 360.22431888836644
+  },
+  "fraccion_poda_seleccionada": 0.6,
+  "modelo_recomendado": "podado",
+  "nombre_candidato_recomendado": "pruned_50pct",
+  "int8": {
+    "disponible": true,
+    "tipo": "INT8_dinamica_solo_linear",
+    "advertencia": "Solo se cuantizó la capa Linear; las convoluciones permanecen FP32.",
+    "error_int8_estatico": "No hay backend INT8 disponible. Backends: ['onednn']",
+    "accuracy": 1.0,
+    "precision_macro": 1.0,
+    "recall_macro": 1.0,
+    "f1_macro": 1.0,
+    "fpr_macro_ovr": 0.0,
+    "fnr_macro_ovr": 0.0,
+    "n_validacion": 114,
+    "latencia_media_ms": 3.2629899999119516,
+    "latencia_p50_ms": 2.9313499990166747,
+    "latencia_p95_ms": 5.833010000878858,
+    "fps_batch1": 306.4673811525576,
+    "tamano_archivo_bytes": 6299793,
+    "ram_pesos_estimados_bytes": 1548
+  },
+  "advertencias": [
+    "La poda no estructurada genera pesos cero; no reduce por sí sola la dimensión de los tensores.",
+    "La latencia se mide en este equipo con batch=1; puede cambiar en el dispositivo final.",
+    "El tamaño del archivo representa el almacenamiento del modelo en el disco de la computadora.",
+    "RAM y CPU dependen del equipo donde se ejecuta PyTorch; el consumo energético requiere un medidor de potencia externo."
+  ]
+}

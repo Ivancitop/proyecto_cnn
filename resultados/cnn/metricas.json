@@ -1,0 +1,53 @@
+{
+  "cfg": {
+    "img_size": 128,
+    "n_filtros": 16,
+    "n_capas": 6,
+    "lr": 0.005,
+    "batch_size": 16,
+    "epocas": 17,
+    "dropout": 0.3,
+    "paciencia": null,
+    "weight_decay": 0.0001
+  },
+  "params": 1575027,
+  "macs": 96732672,
+  "tiempo_entrenamiento_s": 94.91435329999968,
+  "mejor_epoca": 9,
+  "epocas_ejecutadas": 17,
+  "train_acc_final": 0.956989247311828,
+  "train_loss_final": 0.1129533708447479,
+  "val": {
+    "loss": 0.004480472970100348,
+    "acc": 1.0,
+    "f1_macro": 1.0
+  },
+  "test": {
+    "accuracy": 1.0,
+    "precision_macro": 1.0,
+    "recall_macro": 1.0,
+    "f1_macro": 1.0,
+    "n": 135,
+    "por_clase": {
+      "normal": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "soporte": 45
+      },
+      "rayadura": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "soporte": 45
+      },
+      "defectuosa": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "soporte": 45
+      }
+    },
+    "loss": 0.007532557293220802
+  }
+}

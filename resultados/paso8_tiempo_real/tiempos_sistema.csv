@@ -1,0 +1,12 @@
+﻿metrica,valor,unidad
+tiempo_captura_ms_media,22.532032919638,ms
+tiempo_preprocesamiento_ms_media,2.733159999115742,ms
+tiempo_inferencia_ms_media,4.537669999626814,ms
+latencia_total_ms_media,25.53105999904801,ms
+tiempo_ciclo_ms_media,67.05360999985714,ms
+tiempo_ciclo_ms_maximo,75.28850000016973,ms
+fps_camara_procesamiento,29.665694193646445,frames/s
+tasa_inspeccion_piezas_s,0.10226023506944655,piezas/s
+tasa_inspeccion_piezas_min,6.135614104166793,piezas/min
+ram_proceso_bytes_media,446022041.6,bytes
+tamano_archivo_modelo_bytes,6321593,bytes

@@ -1,0 +1,70 @@
+Clases: 0=normal, 1=rayadura, 2=defectuosa
+
+|--- dens_bordes <= 0.03
+|   |--- grad_medio <= 31.95
+|   |   |--- class: 0
+|   |--- grad_medio >  31.95
+|   |   |--- class: 1
+|--- dens_bordes >  0.03
+|   |--- dens_bordes <= 0.05
+|   |   |--- desviacion <= 60.78
+|   |   |   |--- entropia <= 5.32
+|   |   |   |   |--- class: 0
+|   |   |   |--- entropia >  5.32
+|   |   |   |   |--- class: 1
+|   |   |--- desviacion >  60.78
+|   |   |   |--- grad_medio <= 29.02
+|   |   |   |   |--- class: 0
+|   |   |   |--- grad_medio >  29.02
+|   |   |   |   |--- dens_bordes <= 0.03
+|   |   |   |   |   |--- solidez <= 0.98
+|   |   |   |   |   |   |--- class: 2
+|   |   |   |   |   |--- solidez >  0.98
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- dens_bordes >  0.03
+|   |   |   |   |   |--- entropia <= 6.44
+|   |   |   |   |   |   |--- class: 2
+|   |   |   |   |   |--- entropia >  6.44
+|   |   |   |   |   |   |--- class: 2
+|   |--- dens_bordes >  0.05
+|   |   |--- circularidad <= 0.59
+|   |   |   |--- desviacion <= 56.91
+|   |   |   |   |--- class: 1
+|   |   |   |--- desviacion >  56.91
+|   |   |   |   |--- area_rel <= 0.40
+|   |   |   |   |   |--- dens_bordes <= 0.17
+|   |   |   |   |   |   |--- class: 2
+|   |   |   |   |   |--- dens_bordes >  0.17
+|   |   |   |   |   |   |--- class: 2
+|   |   |   |   |--- area_rel >  0.40
+|   |   |   |   |   |--- class: 2
+|   |   |--- circularidad >  0.59
+|   |   |   |--- grad_medio <= 25.81
+|   |   |   |   |--- area_rel <= 0.37
+|   |   |   |   |   |--- n_comp_bordes <= 254.00
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- n_comp_bordes >  254.00
+|   |   |   |   |   |   |--- class: 2
+|   |   |   |   |--- area_rel >  0.37
+|   |   |   |   |   |--- class: 0
+|   |   |   |--- grad_medio >  25.81
+|   |   |   |   |--- grad_medio <= 34.60
+|   |   |   |   |   |--- circularidad <= 0.78
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- circularidad >  0.78
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- grad_medio >  34.60
+|   |   |   |   |   |--- n_comp_bordes <= 124.00
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- n_comp_bordes >  124.00
+|   |   |   |   |   |   |--- class: 2
+
+Importancia de características:
+  dens_bordes     0.576
+  grad_medio      0.152
+  circularidad    0.107
+  area_rel        0.061
+  desviacion      0.060
+  n_comp_bordes   0.034
+  entropia        0.007
+  solidez         0.003

@@ -1,6 +1,2 @@
-*.jpg
 .venv/*
 *.pyc
-*.png
-resultados/*
-dataset_proc/*

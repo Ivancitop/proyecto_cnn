@@ -1,0 +1,3 @@
+metodo,accuracy,f1_macro,robustez_acc_media,latencia_ms_cpu,complejidad
+Convencional (árbol de decisión),0.9459459459459459,0.942261427425822,0.528957528957529,1.0501120001936215,"13 características, 43 nodos"
+CNN,1.0,1.0,0.915057915057915,2.29818100004195,"1,575,027 parámetros, 96.7 M MACs"

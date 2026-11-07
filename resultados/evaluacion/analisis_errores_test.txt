@@ -1,0 +1,19 @@
+=== Análisis de tipos de fallo - conjunto 'test' (n=111) ===
+
+Accuracy: 1.000 | F1 macro: 1.000 | errores: 0 de 111
+
+Rendimiento por clase:
+  normal       precision=1.000  recall=1.000  f1=1.000  (n=39)
+  rayadura     precision=1.000  recall=1.000  f1=1.000  (n=28)
+  defectuosa   precision=1.000  recall=1.000  f1=1.000  (n=44)
+
+Defecto más fácil/difícil: sin diferencias apreciables (recall = 1.00 en todos).
+
+Confusiones entre clases (real -> predicha):
+  Ninguna: todas las imágenes se clasificaron correctamente.
+
+Falsos negativos críticos (defecto clasificado como normal): 0 de 72 piezas defectuosas
+Falsas alarmas (normal clasificada como defecto): 0 de 39 piezas normales
+
+Imágenes mal clasificadas (0):
+Aciertos con confianza baja (<0.60): 0

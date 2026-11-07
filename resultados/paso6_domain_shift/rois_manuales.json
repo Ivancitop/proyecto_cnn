@@ -1,0 +1,1082 @@
+{
+  "condicionA/normal_1.jpg": {
+    "roi": [
+      766,
+      340,
+      383,
+      383
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionA/normal_2.jpg": {
+    "roi": [
+      791,
+      327,
+      369,
+      369
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionA/normal_3.jpg": {
+    "roi": [
+      767,
+      320,
+      392,
+      392
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionA/normal_4.jpg": {
+    "roi": [
+      789,
+      329,
+      374,
+      374
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionA/normal_5.jpg": {
+    "roi": [
+      789,
+      332,
+      371,
+      371
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionA/normal_6.jpg": {
+    "roi": [
+      810,
+      327,
+      360,
+      360
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionA/normal_7.jpg": {
+    "roi": [
+      811,
+      316,
+      360,
+      360
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionA/normal_8.jpg": {
+    "roi": [
+      804,
+      324,
+      369,
+      369
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionA/normal_9.jpg": {
+    "roi": [
+      796,
+      305,
+      365,
+      365
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionA/normal_10.jpg": {
+    "roi": [
+      805,
+      314,
+      360,
+      360
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionA/rayon_1.jpg": {
+    "roi": [
+      739,
+      331,
+      386,
+      386
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionA/rayon_2.jpg": {
+    "roi": [
+      761,
+      303,
+      384,
+      384
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionA/rayon_3.jpg": {
+    "roi": [
+      696,
+      353,
+      433,
+      433
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionA/rayon_4.jpg": {
+    "roi": [
+      672,
+      339,
+      508,
+      508
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionA/rayon_5.jpg": {
+    "roi": [
+      669,
+      333,
+      476,
+      476
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionA/rayon_6.jpg": {
+    "roi": [
+      645,
+      324,
+      573,
+      573
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionA/rayon_7.jpg": {
+    "roi": [
+      655,
+      325,
+      566,
+      566
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionA/rayon_8.jpg": {
+    "roi": [
+      643,
+      305,
+      568,
+      568
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionA/rayon_9.jpg": {
+    "roi": [
+      647,
+      314,
+      572,
+      572
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionA/rayon_10.jpg": {
+    "roi": [
+      641,
+      298,
+      570,
+      570
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionA/defectuoso_1.jpg": {
+    "roi": [
+      737,
+      328,
+      377,
+      377
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionA/defectuoso_2.jpg": {
+    "roi": [
+      756,
+      312,
+      383,
+      383
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionA/defectuoso_3.jpg": {
+    "roi": [
+      753,
+      320,
+      403,
+      403
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionA/defectuoso_4.jpg": {
+    "roi": [
+      723,
+      344,
+      393,
+      393
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionA/defectuoso_5.jpg": {
+    "roi": [
+      744,
+      338,
+      392,
+      392
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionA/defectuoso_6.jpg": {
+    "roi": [
+      748,
+      340,
+      383,
+      383
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionA/defectuoso_7.jpg": {
+    "roi": [
+      767,
+      354,
+      365,
+      365
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionA/defectuoso_8.jpg": {
+    "roi": [
+      752,
+      317,
+      392,
+      392
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionA/defectuoso_9.jpg": {
+    "roi": [
+      754,
+      327,
+      390,
+      390
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionA/defectuoso_10.jpg": {
+    "roi": [
+      757,
+      314,
+      387,
+      387
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionB/normal_1.jpg": {
+    "roi": [
+      521,
+      289,
+      477,
+      477
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionB/normal_2.jpg": {
+    "roi": [
+      548,
+      240,
+      442,
+      442
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionB/normal_3.jpg": {
+    "roi": [
+      551,
+      330,
+      438,
+      438
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionB/normal_4.jpg": {
+    "roi": [
+      496,
+      246,
+      503,
+      503
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionB/normal_5.jpg": {
+    "roi": [
+      524,
+      254,
+      471,
+      471
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionB/normal_6.jpg": {
+    "roi": [
+      515,
+      289,
+      457,
+      457
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionB/normal_7.jpg": {
+    "roi": [
+      523,
+      231,
+      467,
+      467
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionB/normal_8.jpg": {
+    "roi": [
+      517,
+      225,
+      473,
+      473
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionB/normal_9.jpg": {
+    "roi": [
+      525,
+      218,
+      479,
+      479
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionB/normal_10.jpg": {
+    "roi": [
+      498,
+      186,
+      520,
+      520
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionB/rayon_1.jpg": {
+    "roi": [
+      749,
+      514,
+      471,
+      471
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionB/rayon_2.jpg": {
+    "roi": [
+      985,
+      415,
+      440,
+      440
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionB/rayon_3.jpg": {
+    "roi": [
+      954,
+      470,
+      438,
+      438
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionB/rayon_4.jpg": {
+    "roi": [
+      952,
+      421,
+      430,
+      430
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionB/rayon_5.jpg": {
+    "roi": [
+      933,
+      528,
+      415,
+      415
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionB/rayon_6.jpg": {
+    "roi": [
+      949,
+      489,
+      433,
+      433
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionB/rayon_7.jpg": {
+    "roi": [
+      844,
+      523,
+      445,
+      445
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionB/rayon_8.jpg": {
+    "roi": [
+      853,
+      513,
+      508,
+      508
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionB/rayon_9.jpg": {
+    "roi": [
+      686,
+      452,
+      536,
+      536
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionB/rayon_10.jpg": {
+    "roi": [
+      978,
+      420,
+      438,
+      438
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionB/defectuoso_1.jpg": {
+    "roi": [
+      875,
+      362,
+      606,
+      606
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionB/defectuoso_2.jpg": {
+    "roi": [
+      879,
+      366,
+      545,
+      545
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionB/defectuoso_3.jpg": {
+    "roi": [
+      874,
+      347,
+      597,
+      597
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionB/defectuoso_4.jpg": {
+    "roi": [
+      852,
+      323,
+      607,
+      607
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionB/defectuoso_5.jpg": {
+    "roi": [
+      817,
+      342,
+      601,
+      601
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionB/defectuoso_6.jpg": {
+    "roi": [
+      826,
+      332,
+      597,
+      597
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionB/defectuoso_7.jpg": {
+    "roi": [
+      856,
+      351,
+      557,
+      557
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionB/defectuoso_8.jpg": {
+    "roi": [
+      856,
+      361,
+      553,
+      553
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionB/defectuoso_9.jpg": {
+    "roi": [
+      830,
+      341,
+      579,
+      579
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionB/defectuoso_10.jpg": {
+    "roi": [
+      835,
+      328,
+      578,
+      578
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionC/normal_1.jpg": {
+    "roi": [
+      660,
+      237,
+      581,
+      581
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionC/normal_2.jpg": {
+    "roi": [
+      639,
+      201,
+      550,
+      550
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionC/normal_3.jpg": {
+    "roi": [
+      615,
+      201,
+      601,
+      601
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionC/normal_4.jpg": {
+    "roi": [
+      619,
+      180,
+      619,
+      619
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionC/normal_5.jpg": {
+    "roi": [
+      602,
+      161,
+      587,
+      587
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionC/normal_6.jpg": {
+    "roi": [
+      576,
+      163,
+      568,
+      568
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionC/normal_7.jpg": {
+    "roi": [
+      544,
+      139,
+      615,
+      615
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionC/normal_8.jpg": {
+    "roi": [
+      571,
+      151,
+      603,
+      603
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionC/normal_9.jpg": {
+    "roi": [
+      553,
+      153,
+      612,
+      612
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionC/normal_10.jpg": {
+    "roi": [
+      548,
+      136,
+      610,
+      610
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionC/rayon_1.jpg": {
+    "roi": [
+      570,
+      147,
+      659,
+      659
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionC/rayon_2.jpg": {
+    "roi": [
+      581,
+      180,
+      554,
+      554
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionC/rayon_3.jpg": {
+    "roi": [
+      560,
+      166,
+      609,
+      609
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionC/rayon_4.jpg": {
+    "roi": [
+      598,
+      194,
+      575,
+      575
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionC/rayon_5.jpg": {
+    "roi": [
+      594,
+      174,
+      573,
+      573
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionC/rayon_6.jpg": {
+    "roi": [
+      613,
+      181,
+      531,
+      531
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionC/rayon_7.jpg": {
+    "roi": [
+      588,
+      181,
+      554,
+      554
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionC/rayon_8.jpg": {
+    "roi": [
+      568,
+      167,
+      578,
+      578
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionC/rayon_9.jpg": {
+    "roi": [
+      579,
+      174,
+      560,
+      560
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionC/rayon_10.jpg": {
+    "roi": [
+      540,
+      117,
+      619,
+      619
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionC/defectuoso_1.jpg": {
+    "roi": [
+      919,
+      91,
+      600,
+      600
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionC/defectuoso_2.jpg": {
+    "roi": [
+      872,
+      8,
+      625,
+      625
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionC/defectuoso_3.jpg": {
+    "roi": [
+      925,
+      82,
+      544,
+      544
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionC/defectuoso_4.jpg": {
+    "roi": [
+      902,
+      57,
+      531,
+      531
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionC/defectuoso_5.jpg": {
+    "roi": [
+      895,
+      57,
+      527,
+      527
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionC/defectuoso_6.jpg": {
+    "roi": [
+      911,
+      70,
+      548,
+      548
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionC/defectuoso_7.jpg": {
+    "roi": [
+      910,
+      91,
+      501,
+      501
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionC/defectuoso_8.jpg": {
+    "roi": [
+      883,
+      79,
+      501,
+      501
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionC/defectuoso_9.jpg": {
+    "roi": [
+      855,
+      52,
+      564,
+      564
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  },
+  "condicionC/defectuoso_10.jpg": {
+    "roi": [
+      865,
+      42,
+      563,
+      563
+    ],
+    "shape": [
+      1080,
+      1920
+    ]
+  }
+}
